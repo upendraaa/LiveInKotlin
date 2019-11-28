@@ -47,7 +47,7 @@ class ConnectedArray{
         input[row][column]=0;
 
         var size =1;
-        //until will be row-1 to row+1
+        //until will be row-1 to row+1 (Until will exclude here row+2)
         for(i in row-1 until row+2 step 1){
 
             for (j in column-1 until  column+2 step 1){
