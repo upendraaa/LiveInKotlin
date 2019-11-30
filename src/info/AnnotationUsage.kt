@@ -5,14 +5,17 @@ import kotlin.reflect.full.functions
 
 class AnnotationUsage{
 
-    @BasicAnnotation("Upendra",30)
+    @BasicAnnotation("BRU",30)
     fun A(){
 
     }
 
-
-    @BasicAnnotation("Upendra",20)
+    @BasicAnnotation("BRU",40)
     fun B(){}
+
+    //this will return default value of annotation
+    @BasicAnnotation
+    fun c(){}
 
 
 }
@@ -27,6 +30,7 @@ fun main(){
         val annotations: List<Annotation> = function.annotations
         if(annotations!=null && annotations.size>0)
         {
+            //AS we are using only one annotation here so we can get it from Index 0
             val basicAnnotation:BasicAnnotation = annotations.get(0) as BasicAnnotation;
             if(basicAnnotation!=null) {
                 println("${basicAnnotation.name}")
